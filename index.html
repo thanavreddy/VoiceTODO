@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice To-Do List</title>
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Author&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', 'Author', sans-serif;
+      background: linear-gradient(145deg, #000000, #1f1f1f);
+      color: #ffffff;
+    }
+
+    .glass {
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .checkbox:checked + span::before {
+      content: "✔";
+      display: inline-block;
+      color: white;
+      background-color: #22c55e;
+      border-radius: 4px;
+      padding: 0 6px;
+      font-size: 0.8rem;
+      margin-right: 8px;
+    }
+
+    .checkbox + span::before {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 4px;
+      border: 2px solid #888;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .checkbox {
+      display: none;
+    }
+
+    .btn {
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .task-completed {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+  <div class="glass max-w-xl w-full rounded-2xl p-6 shadow-2xl">
+    <h1 class="text-2xl font-semibold mb-4">🎙️ Voice To-Do List</h1>
+    <button id="start-btn" class="btn bg-white/10 text-white px-4 py-2 rounded-lg mb-6">
+      Start Talking
+    </button>
+
+    <ul id="task-list" class="space-y-3">
+      <!-- Tasks go here -->
+    </ul>
+  </div>
+</body>
+</html>
